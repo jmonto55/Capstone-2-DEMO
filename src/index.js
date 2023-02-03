@@ -14,9 +14,7 @@ const display = async () => {
         <div class="card_body">
           <h2 class="card_title">Breed ${e.id}</h2>
           <div class="like_container">
-          <span class="like material-symbols-outlined">
-          favorite
-          </span>
+            <span class="like material-symbols-outlined">favorite</span>
             <p class="like_text">5 likes</p>
           </div>
         </div>
