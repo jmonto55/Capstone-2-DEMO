@@ -11,7 +11,12 @@ close.onclick = () => toggleModal();
 setTimeout(() => {
   const commentBtns = document.querySelectorAll('.comment');
   commentBtns.forEach((e) => {
-    e.onclick = () => toggleModal();
+    e.onclick = () => {
+      const { id } = e.parentElement.parentElement;
+      console.log(id);
+      toggleModal();
+    //   showDogcomments(id);
+    };
   });
   const reservationBtns = document.querySelectorAll('.reservation');
   reservationBtns.forEach((e) => {
