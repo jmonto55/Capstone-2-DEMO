@@ -18,8 +18,11 @@ const display = async () => {
             <p class="like_text">5 likes</p>
           </div>
         </div>
-        <button class="comment btn">Comments</button>
-        <button class="reservation btn">Reservations</button>
+        <div class="buttons_container">
+          <button class="comment btn">Comments</button>
+          <button class="reservation btn">Reservations</button>
+        </div>
+        
       </div>`;
   });
 };
