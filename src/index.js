@@ -1,0 +1,29 @@
+import './style.css';
+
+const API_URL = 'https://api.thedogapi.com/v1/images/search?limit=6&api_key=live_XmnH54dwpxOWIEAKOVCcIozrQJ1jpGu0dbxXUpJcadZqYHk4OHEqHwRlAgFwafkY';
+
+const display = async () => {
+  const res = await fetch(API_URL);
+  const data = await res.json();
+  // const idArry = data.map((e) => e.id);
+  const cardsCont = document.querySelector('.cards_container');
+  data.forEach((e) => {
+    cardsCont.innerHTML += `
+      <div id="${e.id}" class="card">
+        <img src='${e.url}' class="card_image" alt="dog image" />
+        <div class="card_body">
+          <h2 class="card_title">Breed ${e.id}</h2>
+          <div class="like_container">
+          <span class="like material-symbols-outlined">
+          favorite
+          </span>
+            <p class="like_text">5 likes</p>
+          </div>
+        </div>
+        <button class="comment btn">Comments</button>
+        <button class="reservation btn">Reservations</button>
+      </div>`;
+  });
+};
+
+display();
