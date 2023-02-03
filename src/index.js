@@ -7,3 +7,14 @@ const toggleModal = () => {
   modal.classList.toggle('invisible');
 };
 close.onclick = () => toggleModal();
+
+setTimeout(() => {
+  const commentBtns = document.querySelectorAll('.comment');
+  commentBtns.forEach((e) => {
+    e.onclick = () => toggleModal();
+  });
+  const reservationBtns = document.querySelectorAll('.reservation');
+  reservationBtns.forEach((e) => {
+    e.onclick = () => toggleModal();
+  });
+}, 1500);
