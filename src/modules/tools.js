@@ -1,14 +1,16 @@
-import getDogs from './api.js';
+import getDog from './api.js';
 
-const display = async () => {
-  const data = await getDogs();
+const idArr = ['q8XC_2pym', 'BkrJjgcV7', 'ajJCO_lDC', 'SJyBfg5NX', 'r1ifZl5E7', 'pSoC1qW8n'];
+
+const displayDogs = async () => {
   const cardsCont = document.querySelector('.cards_container');
-  data.forEach((e) => {
+  idArr.forEach(async (e) => {
+    const dog = await getDog(e);
     cardsCont.innerHTML += `
-      <div id="${e.id}" class="card">
-        <img src='${e.url}' class="card_image" alt="dog image" />
+      <card id="${dog.id}" class="card">
+        <img src='${dog.url}' class="card_image" alt="dog image" />
         <div class="card_body">
-          <h2 class="card_title">Breed ${e.id}</h2>
+          <h2 class="card_title">${dog.breeds[0].name}</h2>
           <div class="like_container">
             <span class="like material-symbols-outlined">favorite</span>
             <p class="like_text">5 likes</p>
@@ -18,9 +20,8 @@ const display = async () => {
           <button class="comment btn">Comments</button>
           <button class="reservation btn">Reservations</button>
         </div>
-        
-      </div>`;
+      </card>`;
   });
 };
 
-window.onload = () => display();
+displayDogs();
