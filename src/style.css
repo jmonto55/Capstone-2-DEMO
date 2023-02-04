@@ -162,8 +162,8 @@ nav {
   margin: auto;
   width: 80%;
   max-width: 800px;
-  height: 90%;
-  max-height: 1500px;
+  height: 100%;
+  max-height: 1600px;
   background-color: #272727;
   padding: 20px;
   display: flex;
@@ -192,7 +192,9 @@ nav {
 
 .modal_img {
   width: 80%;
-  max-width: 400px;
+  max-width: 350px;
+  min-width: 280px;
+  max-height: 350px;
 }
 
 .dog_breed {
@@ -209,6 +211,13 @@ nav {
   width: 50%;
   list-style: none;
   padding: 15px 0;
+}
+
+.perks_list_li_s {
+  width: 100%;
+  list-style: none;
+  padding: 15px 0;
+  margin: 10px 0;
 }
 
 .comments {
@@ -228,18 +237,25 @@ input {
   padding: 5px;
   margin: 10px 0;
   width: 50%;
+  max-width: 250px;
 }
 
 textarea {
   padding: 5px;
-  height: 100px;
+  height: 80px;
   width: 80%;
 }
 
-.comment {
+.commentz {
   margin-top: 10px;
   width: 50%;
+  max-width: 250px;
   cursor: pointer;
+}
+
+.add_comment {
+  width: 100%;
+  text-align: left;
 }
 
 footer {

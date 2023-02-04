@@ -26,7 +26,65 @@ const displayDogs = async () => {
 
 displayDogs();
 
-// const showDogcomments = async (id) => {
-//   const modal = document.querySelector('.modal_container');
+const showDogcomments = async (id) => {
+  const dog = await getDog(id);
+  const modal = document.querySelector('.modal_body_container');
+  modal.innerHTML = '';
+  modal.innerHTML += `
+    <img class="modal_img" src="${dog.url}" alt="Dog photo" />
+    <h2 class="dog_breed">${dog.breeds[0].name}</h2>
+    <ul class="perks_list">
+      <li class="perks_list_li">Weight:  ${dog.breeds[0].weight.imperial} kg</li>
+      <li class="perks_list_li">Height:  ${dog.breeds[0].height.metric} cms</li>
+      <li class="perks_list_li_s">Temperament: ${dog.breeds[0].temperament}</li>
+    </ul>
+    <div class="comments">
+      <h3>Comments</h3>
+      <p>()</p>
+    </div>
+    <ul class="comments_list"></ul>
+    <h3 class="add_comment" >Add a comment</h3>
+    <form class="form" action="">
+      <input placeholder="Your name" type="text">
+      <textarea placeholder="Your insights"></textarea>
+      <button class="commentz btn">Comment</button>
+    </form>`;
+};
 
-// };
+const close = document.querySelector('.close');
+const modal = document.querySelector('.modal');
+const toggleModal = () => {
+  modal.classList.toggle('invisible');
+};
+close.onclick = () => toggleModal();
+
+const navBar = document.querySelector('.nav_list');
+const burger = document.querySelector('.burger');
+const closeM = document.querySelector('.close_m');
+
+const openNav = () => {
+  navBar.style.display = 'flex';
+};
+
+const closeNav = () => {
+  navBar.style.display = 'none';
+};
+
+burger.onclick = () => openNav();
+
+closeM.onclick = () => closeNav();
+setTimeout(() => {
+  const commentBtns = document.querySelectorAll('.comment');
+  commentBtns.forEach((e) => {
+    e.onclick = () => {
+      const { id } = e.parentElement.parentElement;
+      console.log(id);
+      toggleModal();
+      showDogcomments(id);
+    };
+  });
+  const reservationBtns = document.querySelectorAll('.reservation');
+  reservationBtns.forEach((e) => {
+    e.onclick = () => toggleModal();
+  });
+}, 1500);
