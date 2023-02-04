@@ -78,7 +78,6 @@ setTimeout(() => {
   commentBtns.forEach((e) => {
     e.onclick = () => {
       const { id } = e.parentElement.parentElement;
-      console.log(id);
       toggleModal();
       showDogcomments(id);
     };
