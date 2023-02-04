@@ -61,6 +61,7 @@ nav {
   font-size: 2em;
   position: absolute;
   top: 30px;
+  cursor: pointer;
 }
 
 .nav_list {
@@ -161,10 +162,14 @@ nav {
   margin: auto;
   width: 80%;
   max-width: 800px;
-  height: 80%;
-  max-height: 800px;
+  height: 90%;
+  max-height: 1500px;
   background-color: #272727;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .invisible {
@@ -172,13 +177,74 @@ nav {
 }
 
 .close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   font-size: 2em;
+  cursor: pointer;
+}
+
+.modal_body_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal_img {
+  width: 80%;
+  max-width: 400px;
+}
+
+.dog_breed {
+  margin: 10px;
+}
+
+.perks_list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+.perks_list_li {
+  width: 50%;
+  list-style: none;
+  padding: 15px 0;
+}
+
+.comments {
+  display: flex;
+  width: 120px;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  padding: 5px;
+  margin: 10px 0;
+  width: 50%;
+}
+
+textarea {
+  padding: 5px;
+  height: 100px;
+  width: 80%;
+}
+
+.comment {
+  margin-top: 10px;
+  width: 50%;
   cursor: pointer;
 }
 
 footer {
   margin-top: 80px;
-  height: 60px;
+  height: 70px;
   width: 100%;
   display: flex;
   align-items: center;

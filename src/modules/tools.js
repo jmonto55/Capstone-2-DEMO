@@ -28,4 +28,5 @@ displayDogs();
 
 // const showDogcomments = async (id) => {
 //   const modal = document.querySelector('.modal_container');
+
 // };
